@@ -1,6 +1,6 @@
 {
   "name": "callifexists",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A simple utility to call a function if it exists",
   "main": "index.js",
   "scripts": {
