@@ -28,4 +28,9 @@ describe('throwIfNotFunction()', () => {
     expect(() => throwIfNotFunction('string')).to.throw;
     expect(() => throwIfNotFunction('')).to.throw;
   });
+
+  it('throws a good error message', () => {
+    const message = 'callback was supposed to be a function but it\'s string';
+    expect(() => throwIfNotFunction('blah', 'callback')).to.throw(message);
+  });
 });

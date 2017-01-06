@@ -6,11 +6,16 @@ and this project adheres to [Semantic Versioning](http://semver.org/).
 
 
 ## Unreleased
-- travis-ci
-- more tests
-- all shields.io icons work
-- usage documentation
 - callIfFnNew: to instantiate class constructors
+
+## [1.0.0] 2017-01-06
+- more tests
+- usage documentation
+
+## [0.2.1] 2017-01-06
+- more tests
+- travis auto deployment
+- badges on the readme file
 
 ## [0.1.0] 2017-01-06
 - the original callIfExists
