@@ -1,0 +1,33 @@
+{
+  "name": "callifexists",
+  "version": "0.0.0",
+  "description": "A simple utility to call a function if it exists",
+  "main": "index.js",
+  "scripts": {
+    "test": "mocha",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/userpixel/callifexists.git"
+  },
+  "keywords": [
+    "callback",
+    "async",
+    "function"
+  ],
+  "author": "",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/userpixel/callifexists/issues"
+  },
+  "homepage": "https://github.com/userpixel/callifexists#readme",
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "eslint": "^3.12.2",
+    "eslint-config-schibsted": "^3.1.0",
+    "eslint-plugin-chai-expect": "^1.1.1",
+    "eslint-plugin-import": "^2.2.0",
+    "mocha": "^3.2.0"
+  }
+}
