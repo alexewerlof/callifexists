@@ -1,1 +1,3 @@
 .editorconfig
+test/
+.eslintrc.json
