@@ -19,7 +19,11 @@ It's a dead simple tool for calling an optional callback function only when it i
 
 ## API
 
-The API 
+The API is exported with commonjs format so:
+
+```javascript
+const { callIfExists, callIfFn, callIfFnThrow, isFunction, throwIfNotFunction } = require('callifexists');
+```
 
 ### `callIfExists(fn, ...params)`
 
@@ -31,7 +35,7 @@ Is just an aliwas to `callIfFn`!
 
 Calls `fn` passing all parameters you specified.
 
-```
+```javascript
 function sqr(x) { return x * x; }
 const mult = (a, b) => a * b;
 const multiplalala = 'this is not a function';
@@ -44,7 +48,7 @@ It returns whatever the function returns. So if the function returns a `Promise`
 as  well.
 If `fn` is not a function, `undefined` is returned.
 
-```
+```javascript
 const fn = Math.random() < 0.5 ? 'some string' : () => 'Stockholm';
 callIfFn(fn); // may return undefined or 'Stockholm' with a 50-50 chance!
 ```
@@ -59,7 +63,7 @@ For usages of `this` see the documentation below.
 
 Same as 👆 but will throw if `fn` is not a function.
 
-```
+```javascript
 const fn = 'Гётеборг';
 callIfFn(fn); // throws Error('callIfFnThrow fn parameter was supposed to be a function but it's string')
 ```
@@ -69,7 +73,7 @@ callIfFn(fn); // throws Error('callIfFnThrow fn parameter was supposed to be a f
 This is a utility function that is used internally but is useful on its own.
 Returns `true` if `fn` is a function (otherwise returns `false`).
 
-```
+```javascript
 isFunction(() => 'Alex'); // returns true
 isFunction(eval); // true
 isFunction(null); // false
@@ -82,7 +86,7 @@ isFunction(13); // false
 Same as 👆 but instead of returning, it'll just throw if `fn` is not a function.
 The `descriptor` parameter can be used to generate a more meaningful error message.
 
-```
+```javascript
 const obj = {name: 'Alex'};
 throwIfNotFunction(obj, 'databaseCallback'); // throws databaseCallback was supposed to be a function but it's object`);
 ```
@@ -97,7 +101,7 @@ If your function uses `this` there are a couple of ways to get it right.
 
 Arrow functions "inherit" `this` from where they were defined:
 
-```
+```javascript
 this.name = 'Alex';
 const myFn = () => return this.name;
 callIfExists(myFn); // returns 'Alex'
@@ -107,7 +111,7 @@ callIfExists(myFn); // returns 'Alex'
 
 Good old `bind(obj)` can be used to bind `this` in your function to an object you desire:
 
-```
+```javascript
 const obj = {
   name: 'Alex'
 }
@@ -121,7 +125,7 @@ callIfExists(myFn.bind(obj)); // returns 'Alex'
 
 As mentioned above, the functions pass their `this` to your functions. So you can bind it like:
 
-```
+```javascript
 const obj = {
   name: 'Alex'
 }
@@ -135,7 +139,7 @@ callIfExists.bind(obj)(myFn); // returns 'Alex'
 
 We use *mocha* and *chai.expect*:
 
-```
+```bash
 npm t
 ```
 

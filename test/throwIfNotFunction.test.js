@@ -33,4 +33,9 @@ describe('throwIfNotFunction()', () => {
     const message = 'callback was supposed to be a function but it\'s string';
     expect(() => throwIfNotFunction('blah', 'callback')).to.throw(message);
   });
+
+  it('throws a good error message even when descriptor is missing', () => {
+    const message = 'variable was supposed to be a function but it\'s string';
+    expect(() => throwIfNotFunction('blah')).to.throw(message);
+  });
 });
