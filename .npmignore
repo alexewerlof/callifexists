@@ -1,3 +1,5 @@
 .editorconfig
 test/
 .eslintrc.json
+.travis.yml
+yarn.lock
