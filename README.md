@@ -34,8 +34,10 @@ Calls `fn` passing all parameters you specified.
 ```
 function sqr(x) { return x * x; }
 const mult = (a, b) => a * b;
+const multiplalala = 'this is not a function';
 callIfFn(sqr, 3); // returns 9
 callIfFn(mult, 5, 4); // 20
+callIfFn(multiplalala, 5, 4); // undefined
 ```
 
 It returns whatever the function returns. So if the function returns a `Promise`, it'll return that
@@ -56,6 +58,11 @@ For usages of `this` see the documentation below.
 ### `callIfFnThrow(fn, ...params)`
 
 Same as 👆 but will throw if `fn` is not a function.
+
+```
+const fn = 'Гётеборг';
+callIfFn(fn); // throws Error('callIfFnThrow fn parameter was supposed to be a function but it's string')
+```
 
 ### isFunction(fn)
 

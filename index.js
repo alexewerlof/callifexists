@@ -19,7 +19,7 @@ function callIfFn(fn, ...params) {
 
 function callIfFnThrow(fn, ...params) {
   const self = this;
-  throwIfNotFunction(fn);
+  throwIfNotFunction(fn, 'callIfFnThrow fn parameter');
   return fn.apply(self, params);
 }
 
