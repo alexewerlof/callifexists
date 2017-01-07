@@ -7,6 +7,7 @@
 # Intro
 
 It's a dead simple tool for calling an optional callback function only when it is defined.
+Its most important use case it to call optional callback functions.
 
 * No dependencies
 * Well tested
